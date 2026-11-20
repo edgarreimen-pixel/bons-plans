@@ -1,0 +1,44 @@
+name: Publication de l'application
+
+# Publie le dossier web/ sur GitHub Pages (gratuit) à chaque modification.
+# config.js est généré à partir des variables du dépôt
+# (Settings → Secrets and variables → Actions → onglet Variables) :
+#   SUPABASE_URL, SUPABASE_ANON_KEY  (la clé "anon" est publique par conception)
+on:
+  push:
+    branches: [main]
+    paths: ['web/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Génère config.js
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -n "$SUPABASE_URL" ]; then
+            printf 'window.BONSPLANS_CONFIG = { supabaseUrl: "%s", supabaseAnonKey: "%s" };\n' "$SUPABASE_URL" "$SUPABASE_ANON_KEY" > web/config.js
+          fi
+          sed -i "s/__BUILD__/${GITHUB_SHA::8}/" web/sw.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4
