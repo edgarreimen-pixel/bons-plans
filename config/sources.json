@@ -1,0 +1,94 @@
+{
+  "_lisez_moi": "status: active = connecteur écrit et activé (l'état RÉEL — succès, nombre d'offres, erreurs — est mesuré à chaque passage et affiché dans l'appli). planned = source référencée, pas encore collectée. needs_key = prévue, nécessite une inscription/clé gratuite (connecteur à écrire). Les boutiques indépendantes sont dans shops.json.",
+  "sources": [
+    {
+      "id": "dealabs", "name": "Dealabs", "kind": "pepper", "status": "active", "country": "FR", "currency": "EUR",
+      "homepage": "https://www.dealabs.com", "ttl_hours": 72,
+      "feeds": ["https://www.dealabs.com/rss/hot", "https://www.dealabs.com/rss/new"],
+      "categories": ["toutes"], "description": "Communauté française de bons plans : offres signalées et votées par les membres (prix communautaires, non vérifiés)."
+    },
+    {
+      "id": "hotukdeals", "name": "hotukdeals", "kind": "pepper", "status": "active", "country": "GB", "currency": "GBP",
+      "homepage": "https://www.hotukdeals.com", "ttl_hours": 72,
+      "feeds": ["https://www.hotukdeals.com/rss/hot"],
+      "categories": ["toutes"], "description": "Communauté britannique de bons plans (réseau Pepper)."
+    },
+    {
+      "id": "mydealz", "name": "mydealz", "kind": "pepper", "status": "active", "country": "DE", "currency": "EUR",
+      "homepage": "https://www.mydealz.de", "ttl_hours": 72,
+      "feeds": ["https://www.mydealz.de/rss/hot"],
+      "categories": ["toutes"], "description": "Communauté allemande de bons plans (réseau Pepper)."
+    },
+    {
+      "id": "chollometro", "name": "Chollometro", "kind": "pepper", "status": "active", "country": "ES", "currency": "EUR",
+      "homepage": "https://www.chollometro.com", "ttl_hours": 72,
+      "feeds": ["https://www.chollometro.com/rss/hot"],
+      "categories": ["toutes"], "description": "Communauté espagnole de bons plans (réseau Pepper)."
+    },
+    {
+      "id": "pepper-it", "name": "Pepper Italia", "kind": "pepper", "status": "active", "country": "IT", "currency": "EUR",
+      "homepage": "https://www.pepper.it", "ttl_hours": 72,
+      "feeds": ["https://www.pepper.it/rss/hot"],
+      "categories": ["toutes"], "description": "Communauté italienne de bons plans (réseau Pepper)."
+    },
+    {
+      "id": "slickdeals", "name": "Slickdeals", "kind": "rss", "status": "active", "country": "US", "currency": "USD",
+      "homepage": "https://slickdeals.net", "ttl_hours": 72, "maxAgeDays": 5,
+      "feeds": [
+        "https://slickdeals.net/newsearch.php?mode=frontpage&searcharea=deals&searchin=first&rss=1",
+        "https://slickdeals.net/newsearch.php?mode=popdeals&searcharea=deals&searchin=first&rss=1"
+      ],
+      "categories": ["toutes"], "description": "Première communauté américaine de bons plans (pages Frontpage et Popular)."
+    },
+    {
+      "id": "secretflying", "name": "Secret Flying", "kind": "rss", "status": "active", "country": "INT", "currency": "EUR",
+      "homepage": "https://www.secretflying.com", "ttl_hours": 120, "maxAgeDays": 6, "categoryHint": "voyages",
+      "feeds": ["https://www.secretflying.com/feed/"],
+      "categories": ["voyages"], "description": "Alertes de billets d'avion à prix cassés et erreurs tarifaires signalées."
+    },
+    {
+      "id": "steam-fr", "name": "Steam", "kind": "steam", "status": "active", "country": "FR", "currency": "EUR",
+      "homepage": "https://store.steampowered.com", "ttl_hours": 30, "cc": "fr", "lang": "french", "priceSource": "marchand",
+      "categories": ["gaming"], "description": "Promotions de la vitrine Steam (prix officiels du marchand, en euros)."
+    },
+    {
+      "id": "epic-fr", "name": "Epic Games Store", "kind": "epic", "status": "active", "country": "FR", "currency": "EUR",
+      "homepage": "https://store.epicgames.com", "ttl_hours": 30, "locale": "fr",
+      "categories": ["gaming"], "description": "Jeux offerts et remisés de la semaine (prix et dates officiels)."
+    },
+    {
+      "id": "cheapshark", "name": "CheapShark (30+ boutiques de jeux PC)", "kind": "cheapshark", "status": "active", "country": "INT", "currency": "USD",
+      "homepage": "https://www.cheapshark.com", "ttl_hours": 24, "sorts": ["Deal Rating", "Recent"], "upperPrice": 60,
+      "categories": ["gaming"], "description": "API publique gratuite suivant les prix de Steam, GOG, Humble, Fanatical, GamesPlanet… (prix en dollars)."
+    },
+
+    { "id": "ebay", "name": "eBay (API Browse)", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://developer.ebay.com", "categories": ["toutes"], "description": "API officielle gratuite après inscription développeur. Connecteur à écrire." },
+    { "id": "isthereanydeal", "name": "IsThereAnyDeal", "kind": "planned", "status": "needs_key", "country": "INT", "homepage": "https://isthereanydeal.com", "categories": ["gaming"], "description": "Historique des prix de jeux (vérification). Clé gratuite. Connecteur à écrire." },
+    { "id": "ticketmaster", "name": "Ticketmaster (Discovery API)", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://developer.ticketmaster.com", "categories": ["loisirs"], "description": "Concerts et spectacles. Clé gratuite. Connecteur à écrire." },
+    { "id": "amadeus", "name": "Amadeus (vols)", "kind": "planned", "status": "needs_key", "country": "INT", "homepage": "https://developers.amadeus.com", "categories": ["voyages"], "description": "Recherche de vols, quota gratuit. Connecteur à écrire." },
+    { "id": "awin", "name": "Awin (flux d'affiliation)", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://www.awin.com", "categories": ["toutes"], "description": "Accès aux flux produits/promos de milliers d'enseignes (Fnac, Darty, Boulanger, Sephora…) après validation du compte éditeur." },
+    { "id": "effiliation", "name": "Effiliation", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://www.effiliation.com", "categories": ["toutes"], "description": "Réseau d'affiliation français : flux promotions et codes. Compte éditeur requis." },
+    { "id": "kelkoo", "name": "Kelkoo Group", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://www.kelkoogroup.com", "categories": ["toutes"], "description": "Flux de comparateur de prix. Compte partenaire requis." },
+    { "id": "rakuten-advertising", "name": "Rakuten Advertising", "kind": "planned", "status": "needs_key", "country": "INT", "homepage": "https://rakutenadvertising.com", "categories": ["toutes"], "description": "Flux d'affiliation internationaux. Compte éditeur requis." },
+    { "id": "tradedoubler", "name": "Tradedoubler", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://www.tradedoubler.com", "categories": ["toutes"], "description": "Flux produits et vouchers. Compte éditeur requis." },
+    { "id": "amazon-paapi", "name": "Amazon (Product Advertising API)", "kind": "planned", "status": "needs_key", "country": "FR", "homepage": "https://affiliate-program.amazon.fr", "categories": ["toutes"], "description": "Réservé aux partenaires Amazon validés (ventes requises). Pas de collecte directe du site (conditions d'utilisation)." },
+    { "id": "aliexpress", "name": "AliExpress (Affiliate API)", "kind": "planned", "status": "needs_key", "country": "INT", "homepage": "https://portals.aliexpress.com", "categories": ["toutes"], "description": "API d'affiliation, compte requis." },
+    { "id": "booking", "name": "Booking.com", "kind": "planned", "status": "needs_key", "country": "INT", "homepage": "https://www.booking.com/affiliate-program", "categories": ["voyages"], "description": "Programme partenaire requis." },
+
+    { "id": "fnac-darty", "name": "Fnac / Darty", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.fnac.com", "categories": ["high-tech","audio-culture","maison"], "description": "Pas d'API publique : intégration prévue via flux d'affiliation (Awin)." },
+    { "id": "cdiscount", "name": "Cdiscount", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.cdiscount.com", "categories": ["toutes"], "description": "Intégration prévue via programme d'affiliation." },
+    { "id": "boulanger", "name": "Boulanger", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.boulanger.com", "categories": ["high-tech","maison"], "description": "Intégration prévue via flux d'affiliation." },
+    { "id": "backmarket", "name": "Back Market", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.backmarket.fr", "categories": ["high-tech"], "description": "Reconditionné. Intégration prévue via affiliation." },
+    { "id": "veepee", "name": "Veepee", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.veepee.fr", "categories": ["mode","maison","voyages"], "description": "Ventes privées réservées aux membres : pas de collecte automatisée possible sans accord." },
+    { "id": "showroomprive", "name": "Showroomprivé", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.showroomprive.com", "categories": ["mode","beaute"], "description": "Ventes privées réservées aux membres : pas de collecte sans accord." },
+    { "id": "decathlon", "name": "Decathlon", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.decathlon.fr", "categories": ["sport"], "description": "Intégration prévue via affiliation." },
+    { "id": "zalando", "name": "Zalando", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.zalando.fr", "categories": ["mode"], "description": "Intégration prévue via affiliation." },
+    { "id": "sephora", "name": "Sephora", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.sephora.fr", "categories": ["mode"], "description": "Intégration prévue via affiliation." },
+    { "id": "manomano", "name": "ManoMano", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.manomano.fr", "categories": ["bricolage-jardin"], "description": "Intégration prévue via affiliation." },
+    { "id": "ikea", "name": "IKEA", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.ikea.com/fr", "categories": ["maison"], "description": "Pas d'API publique de promotions." },
+    { "id": "sncf", "name": "SNCF Connect / Ouigo", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.sncf-connect.com", "categories": ["voyages"], "description": "Pas d'API tarifaire publique ; promotions déjà relayées par Dealabs." },
+    { "id": "ryanair", "name": "Ryanair / easyJet / Transavia", "kind": "planned", "status": "planned", "country": "INT", "homepage": "https://www.ryanair.com", "categories": ["voyages"], "description": "Collecte directe interdite par leurs conditions ; couvert indirectement par Secret Flying et Dealabs." },
+    { "id": "parcs", "name": "Parcs d'attractions (Disneyland, Astérix…)", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.disneylandparis.com", "categories": ["loisirs"], "description": "Promotions relayées par Dealabs ; intégration directe via affiliation à étudier." },
+    { "id": "groupon", "name": "Groupon", "kind": "planned", "status": "planned", "country": "FR", "homepage": "https://www.groupon.fr", "categories": ["loisirs"], "description": "Intégration prévue via affiliation." }
+  ]
+}

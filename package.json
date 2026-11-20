@@ -1,0 +1,17 @@
+{
+  "name": "bonsplans",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Moteur autonome de collecte de bonnes affaires (sans IA) + interface web",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "collect": "node collector/index.mjs",
+    "collect:dry": "node collector/index.mjs --dry-run",
+    "probe": "node scripts/probe-shop.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  }
+}

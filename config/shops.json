@@ -1,0 +1,15 @@
+{
+  "_lisez_moi": "Boutiques indépendantes / marques émergentes. Ajouter une ligne = ajouter une source (ou: npm run probe -- domaine.com pour tester et ajouter automatiquement). platform: auto | shopify | woocommerce. La plateforme est détectée à chaque passage ; une boutique qui n'expose pas de catalogue public, ou dont le robots.txt l'interdit, apparaît en échec dans l'appli et ne produit AUCUNE offre.",
+  "shops": [
+    { "domain": "www.asphalte.com",    "name": "Asphalte",      "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.hopaal.com",      "name": "Hopaal",        "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.horace.co",       "name": "Horace",        "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.merci-handy.com", "name": "Merci Handy",   "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.respire.co",      "name": "Respire",       "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.cabaia.com",      "name": "Cabaïa",        "country": "FR", "currency": "EUR", "categoryHint": "mode" },
+    { "domain": "www.allbirds.com",    "name": "Allbirds",      "country": "US", "currency": "USD", "categoryHint": "mode" },
+    { "domain": "www.bombas.com",      "name": "Bombas",        "country": "US", "currency": "USD", "categoryHint": "mode" },
+    { "domain": "kith.com",            "name": "Kith",          "country": "US", "currency": "USD", "categoryHint": "mode" },
+    { "domain": "colourpop.com",       "name": "ColourPop",     "country": "US", "currency": "USD", "categoryHint": "mode" }
+  ]
+}
